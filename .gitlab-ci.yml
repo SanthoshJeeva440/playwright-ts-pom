@@ -15,7 +15,7 @@ before_script:
 playwright_tests:
   stage: main
   script:
-    - HEADLESS=true npx playwright test test-suite/smoke/login.test.ts
+    - HEADLESS=true BROWSER=webkit npx playwright test test-suite/smoke/login.test.ts
   artifacts:
     when: always
     paths:
