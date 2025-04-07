@@ -1,0 +1,23 @@
+{
+  "name": "playwright_pom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "qa": "npx playwright test",
+    "cross": "npx playwright test --browser=all"
+  },
+  "keywords": [
+    "playwright TEST Runner"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^20.14.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "tesseract.js": "^3.0.3"
+  }
+}

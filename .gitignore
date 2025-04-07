@@ -1,0 +1,6 @@
+node_modules/
+/playwright/.cache/
+reports/
+*.png
+*.traineddata
+.DS_Store
