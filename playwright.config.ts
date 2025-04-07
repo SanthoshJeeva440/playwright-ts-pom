@@ -18,7 +18,7 @@ export default defineConfig({
   outputDir: 'reports/all-results',
   reporter:[
     ['list'],
-    ['html', { outputFolder: 'reports/html' }],
+    ['html', { outputFolder: 'reports/html', open: 'never' }],
     ['json', { outputFile: 'reports/report.json' }]
   ],
   
