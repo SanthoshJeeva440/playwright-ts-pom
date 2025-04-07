@@ -26,7 +26,7 @@ export default defineConfig({
   globalTeardown: require.resolve('./fixtures/global.teardown.ts'),
   use: {
     baseURL: ENV.URL,
-    headless: process.env.HEADLESS == 'false',
+    headless: process.env.HEADLESS !== 'false',
     storageState: 'storageState.json',
     browserName: BROWSER as 'chromium' | 'firefox' | 'webkit',
     viewport: null,

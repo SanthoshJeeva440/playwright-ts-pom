@@ -23,7 +23,7 @@ else {
 
 // Common configuration variables
 export const BROWSER = process.env.BROWSER || 'chromium';
-export const HEADLESS = process.env.HEADLESS === 'true';
+export const HEADLESS = process.env.HEADLESS !== 'false';
 export const CHANNEL = process.env.CHANNEL || '';
 export const BASEURL = process.env.URL || 'http://adactinhotelapp.com';
 
