@@ -1,0 +1,8 @@
+# .woodpecker/pipeline.yml
+pipeline:
+  run-tests:
+    image: mcr.microsoft.com/playwright:v1.43.1-jammy
+    commands:
+      - npm ci
+      - npx playwright install --with-deps
+      - HEADLESS=true npx playwright test
