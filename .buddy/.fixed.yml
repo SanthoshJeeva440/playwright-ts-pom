@@ -1,0 +1,18 @@
+actions:
+  - name: Install dependencies
+    action: Node.js
+    node_version: '20'
+    commands:
+      - npm ci
+
+  - name: Install Playwright Browsers
+    action: Node.js
+    node_version: '20'
+    commands:
+      - npx playwright install --with-deps
+
+  - name: Run Playwright Tests
+    action: Node.js
+    node_version: '20'
+    commands:
+      - HEADLESS=true npx playwright test
