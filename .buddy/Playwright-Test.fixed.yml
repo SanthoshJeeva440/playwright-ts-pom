@@ -4,3 +4,15 @@
     refs:
     - refs/heads/*
   fail_on_prepare_env_warning: true
+  actions:
+  - action: HEADLESS=true npx playwright test
+    type: BUILD
+    docker_image_name: library/node
+    docker_image_tag: 22
+    execute_commands:
+    - "# yarn install"
+    - npm ci
+    - npm install --save-dev --no-audit
+    - npx playwright install --with-deps
+    - HEADLESS=true npx playwright test
+    shell: BASH
