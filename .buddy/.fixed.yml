@@ -1,4 +1,4 @@
-- pipeline: "Build"
+- pipeline: "Playwrigh Tests"
   on: "EVENT"
   events:
   - type: "PUSH"
