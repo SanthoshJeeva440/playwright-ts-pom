@@ -13,3 +13,21 @@
       - npm install --save-dev --no-audit
       - npx playwright install --with-deps
       - HEADLESS=true npx playwright test
+  - action: "Email"
+    name: "Notify QA Team"
+    to:
+      - "santhosh.g@calibraint.com"
+      - "krishnakumar@calibraint.com"
+      - "santhoshjeeva440@gmail.com"
+    subject: "✅ Playwright Tests Completed"
+    body: |
+      Hello team,
+
+      The Playwright tests have completed in Buddy for project **$BUDDY_PROJECT_NAME**.
+
+      ✅ Status: **$BUDDY_EXECUTION_STATUS**
+      🕒 Started at: $BUDDY_EXECUTION_START_DATE
+      🔗 View the test artifacts and report: $BUDDY_EXECUTION_ARTIFACTS_URL
+
+      Santhosh,
+      Your CI Pipeline 🤖
