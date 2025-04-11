@@ -15,5 +15,6 @@
       - HEADLESS=true npx playwright test
 
   - action: "Check Version"
+    type: "TEST"
     execute_commands:
       - npx playwright --version
