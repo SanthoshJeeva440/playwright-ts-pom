@@ -27,6 +27,4 @@
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
     content: Automation Report
     send_as_html: true
-    send_to_groups: 
-    - santhoshjeeva440@gmail.com
-    - santhosh.g@calibraint.com
+    recipients: santhoshjeeva440@gmail.com santhosh.g@calibraint.com
