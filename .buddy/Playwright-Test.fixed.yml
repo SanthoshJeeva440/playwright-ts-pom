@@ -14,5 +14,5 @@
     - npm ci
     - npm install --save-dev --no-audit
     - npx playwright install --with-deps
-    - HEADLESS=true npx playwright test
+    - HEADLESS=true npx playwright test --reporter=html
     shell: BASH
