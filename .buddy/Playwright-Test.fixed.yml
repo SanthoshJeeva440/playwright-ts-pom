@@ -22,3 +22,9 @@
     destination: Reports/playwright-report.zip
     deployment_excludes:
     - /.git/*
+  - action: Send email
+    type: EMAIL
+    title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
+    content: Automation Report
+    send_as_html: true
+    recipients: santhoshjeeva440@gmail.com
