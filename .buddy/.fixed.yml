@@ -7,6 +7,9 @@
   - action: "build"
     type: "BUILD"
     docker_image_name: "library/node"
-    docker_image_tag: "16"
+    docker_image_tag: "20"
     execute_commands:
-      - npm install
+      - npm ci
+      - npm install --save-dev --no-audit
+      - npx playwright install --with-deps
+      - HEADLESS=true npx playwright test
