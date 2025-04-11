@@ -14,6 +14,3 @@
       - npx playwright install --with-deps
       - HEADLESS=true npx playwright test
       - npx playwright --version
-    source_path:
-      - reports/
-    artifact_name: playwright-artifacts
