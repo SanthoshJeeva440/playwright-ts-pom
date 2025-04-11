@@ -1,21 +1,12 @@
-pipelines:
-  - name: Run Playwright Tests
-    trigger_mode: ON_PUSH
-    actions:
-      - action: Install Dependencies
-        type: NODE
-        node_version: 20
-        commands:
-          - npm ci
-
-      - action: Install Playwright Browsers
-        type: NODE
-        node_version: 20
-        commands:
-          - npx playwright install --with-deps
-
-      - action: Run Tests
-        type: NODE
-        node_version: 20
-        commands:
-          - HEADLESS=true npx playwright test
+- pipeline: "Build"
+  on: "EVENT"
+  events:
+  - type: "PUSH"
+  resources: "DEFAULT"
+  actions:
+  - action: "build"
+    type: "BUILD"
+    docker_image_name: "library/node"
+    docker_image_tag: "16"
+    execute_commands:
+      - npm install
