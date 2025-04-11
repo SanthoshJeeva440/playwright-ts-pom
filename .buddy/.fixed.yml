@@ -14,6 +14,6 @@
       - npx playwright install --with-deps
       - HEADLESS=true npx playwright test
   - action: "Check Version"
-    type: "TEST"
+    type: "BUILD"
     execute_commands:
       - npx playwright --version
