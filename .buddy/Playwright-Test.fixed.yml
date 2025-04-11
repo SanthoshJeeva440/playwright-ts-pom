@@ -1,0 +1,6 @@
+- pipeline: Playwright Test
+  events:
+  - type: PUSH
+    refs:
+    - refs/heads/*
+  fail_on_prepare_env_warning: true
