@@ -27,6 +27,6 @@
   - action: Send email
     type: EMAIL
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
-    content: Download your test report here:
+    content: Download your test report here
     send_as_html: true
     recipients: santhoshjeeva440@gmail.com
