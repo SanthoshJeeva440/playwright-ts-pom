@@ -11,6 +11,7 @@
     docker_image_tag: 22
     execute_commands:
     - "# yarn install"
+    - apt-get update && apt-get install -y zip unzip
     - npm ci
     - npm install --save-dev --no-audit
     - npx playwright install --with-deps
