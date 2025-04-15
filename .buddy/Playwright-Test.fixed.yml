@@ -19,8 +19,8 @@
     shell: BASH
   - action: Zip
     type: ZIP
-    local_path: reports/
-    destination: my-report.zip
+    local_path: playwright-report/index.html
+    destination: /my-report.zip
     deployment_excludes:
     - /.git/*
   - action: Send email
