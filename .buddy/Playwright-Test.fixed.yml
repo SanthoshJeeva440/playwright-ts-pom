@@ -17,6 +17,7 @@
     - npx playwright install --with-deps
     - export PLAYWRIGHT_HTML_OUTPUT_DIR=my-report
     - HEADLESS=true npx playwright test --reporter=html
+    - zip -r my.zip playwright-report/index.html
     shell: BASH
   - action: Zip
     type: ZIP
