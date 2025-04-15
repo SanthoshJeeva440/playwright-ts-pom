@@ -25,6 +25,10 @@
     destination: /playwright-report.zip
     deployment_excludes:
     - /.git/*
+  - action: save test
+    type: build
+    working_directory: ./
+    artifacts: my.zip
   - action: Send email
     type: EMAIL
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
