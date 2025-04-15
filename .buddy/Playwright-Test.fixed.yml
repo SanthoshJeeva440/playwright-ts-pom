@@ -24,7 +24,6 @@
     deployment_excludes:
     - /.git/*
   - action: Filesystem
-    type: FILESYSTEM
     direction: upload
     source_path: my-report.zip
     artifact_name: report-zip
