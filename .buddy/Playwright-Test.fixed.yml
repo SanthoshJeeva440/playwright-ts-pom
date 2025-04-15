@@ -20,8 +20,8 @@
     shell: BASH
   - action: Zip
     type: ZIP
-    local_path: /
-    destination: playwright-ts-pom.zip
+    local_path: /buddy/playwright-ts-pom/my-report/*
+    destination: my-report.zip
     deployment_excludes:
     - /.git/*
   - action: Send email
@@ -30,4 +30,3 @@
     content: Automation Report
     send_as_html: true
     recipients: santhoshjeeva440@gmail.com
-    recipients: santhosh.g@calibraint.com
