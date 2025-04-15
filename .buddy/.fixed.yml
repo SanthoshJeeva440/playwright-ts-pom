@@ -1,16 +1,16 @@
-- pipeline: "Playwrigh Tests"
-  on: "EVENT"
-  events:
-  - type: "PUSH"
-  resources: "DEFAULT"
-  actions:
-  - action: "build"
-    type: "BUILD"
-    docker_image_name: "library/node"
-    docker_image_tag: "20"
-    execute_commands:
-      - npm ci
-      - npm install --save-dev --no-audit
-      - npx playwright install --with-deps
-      - HEADLESS=true npx playwright test
-      - npx playwright --version
+# - pipeline: "Playwrigh Tests"
+#   on: "EVENT"
+#   events:
+#   - type: "PUSH"
+#   resources: "DEFAULT"
+#   actions:
+#   - action: "build"
+#     type: "BUILD"
+#     docker_image_name: "library/node"
+#     docker_image_tag: "20"
+#     execute_commands:
+#       - npm ci
+#       - npm install --save-dev --no-audit
+#       - npx playwright install --with-deps
+#       - HEADLESS=true npx playwright test
+#       - npx playwright --version

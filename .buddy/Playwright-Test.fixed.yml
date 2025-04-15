@@ -14,13 +14,13 @@
     - npm ci
     - npm install --save-dev --no-audit
     - npx playwright install --with-deps
-    - export PLAYWRIGHT_HTML_OUTPUT_DIR=playwright-report
+    - export PLAYWRIGHT_HTML_OUTPUT_DIR=my-report
     - HEADLESS=true npx playwright test --reporter=html
     shell: BASH
   - action: Zip
     type: ZIP
-    local_path: playwright-report/*
-    destination: playwright-report.zip
+    local_path: playwright-ts-pom/*
+    destination: playwright-ts-pom.zip
     deployment_excludes:
     - /.git/*
   - action: Send email
