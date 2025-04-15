@@ -19,7 +19,7 @@
     shell: BASH
   - action: Zip
     type: ZIP
-    local_path: reports
+    local_path: reports/
     destination: my-report.zip
     deployment_excludes:
     - /.git/*
