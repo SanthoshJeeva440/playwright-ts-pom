@@ -2,7 +2,7 @@
   events:
   - type: PUSH
     refs:
-    - refs/heads/*
+    - refs/heads/main
   fail_on_prepare_env_warning: true
   actions:
   - action: HEADLESS=true npx playwright test
@@ -26,6 +26,6 @@
   - action: Send email
     type: EMAIL
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
-    content: Automation Report my-report.zip
+    content: Download your test report here: $BUDDY_EXECUTION_ARTIFACTS_URL
     send_as_html: true
     recipients: santhoshjeeva440@gmail.com
