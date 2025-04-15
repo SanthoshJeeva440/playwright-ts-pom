@@ -23,11 +23,6 @@
     destination: my-report.zip
     deployment_excludes:
     - /.git/*
-  - action: Filesystem
-    type: FILESYSTEM
-    direction: upload
-    source_path: my-report.zip
-    artifact_name: report-zip
   - action: Send email
     type: EMAIL
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
