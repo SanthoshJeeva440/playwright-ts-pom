@@ -16,6 +16,7 @@
     - npx playwright install --with-deps
     - export PLAYWRIGHT_HTML_OUTPUT_DIR=my-report
     - HEADLESS=true npx playwright test --reporter=html
+    - zip -r playwright-report.zip reports
     shell: BASH
   - action: Zip
     type: ZIP
@@ -26,6 +27,6 @@
   - action: Send email
     type: EMAIL
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
-    content: Download your test report here: $BUDDY_EXECUTION_ARTIFACTS_URL
+    content: Download your test report here:
     send_as_html: true
     recipients: santhoshjeeva440@gmail.com
