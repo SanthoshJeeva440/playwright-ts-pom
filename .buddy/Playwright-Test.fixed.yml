@@ -16,10 +16,11 @@
     - npx playwright install --with-deps
     - export PLAYWRIGHT_HTML_OUTPUT_DIR=my-report
     - HEADLESS=true npx playwright test --reporter=html
+    - pwd
     shell: BASH
   - action: Zip
     type: ZIP
-    local_path: /*
+    local_path: /
     destination: playwright-ts-pom.zip
     deployment_excludes:
     - /.git/*
