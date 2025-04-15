@@ -20,7 +20,6 @@
     shell: BASH
   - action: Zip
     type: ZIP
-    disabled: true
     local_path: my-report/*
     destination: my-report.zip
     deployment_excludes:
