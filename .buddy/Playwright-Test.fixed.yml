@@ -14,6 +14,7 @@
     - npm ci
     - npm install --save-dev --no-audit
     - npx playwright install --with-deps
+    - export PLAYWRIGHT_HTML_OUTPUT_DIR=playwright-report
     - HEADLESS=true npx playwright test --reporter=html
     shell: BASH
   - action: Zip
@@ -27,4 +28,5 @@
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
     content: Automation Report
     send_as_html: true
-    recipients: santhoshjeeva440@gmail.com santhosh.g@calibraint.com
+    recipients: santhoshjeeva440@gmail.com
+    recipients: santhosh.g@calibraint.com
