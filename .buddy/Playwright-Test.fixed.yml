@@ -26,6 +26,6 @@
   - action: Send email
     type: EMAIL
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
-    content: Download your test report here $BUDDY_RUN_URL, https://app.buddy.works/santhoshjeeva440/playwright-ts-pom-1/pipelines/pipeline/$BUDDY_RUN_URL/browse/content/playwright-report.zip
+    content: Download your test report here $BUDDY_PIPELINE_URL/browse/content/playwright-report.zip
     send_as_html: true
     recipients: santhoshjeeva440@gmail.com
