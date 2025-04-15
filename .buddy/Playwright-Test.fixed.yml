@@ -20,7 +20,7 @@
   - action: Zip
     type: ZIP
     local_path: playwright-report/index.html
-    destination: /my-report.zip
+    destination: /playwright-report.zip
     deployment_excludes:
     - /.git/*
   - action: Send email
