@@ -11,21 +11,24 @@
     docker_image_tag: 22
     execute_commands:
     - "# yarn install"
+    - apt-get update && apt-get install -y zip unzip
     - npm ci
     - npm install --save-dev --no-audit
     - npx playwright install --with-deps
     - export PLAYWRIGHT_HTML_OUTPUT_DIR=my-report
     - HEADLESS=true npx playwright test --reporter=html
+    - zip -r my.zip playwright-report/index.html
+    artifacts: my.zip
     shell: BASH
   - action: Zip
     type: ZIP
-    local_path: ./my-report/*
-    destination: my-report.zip
+    local_path: playwright-report/index.html
+    destination: /playwright-report.zip
     deployment_excludes:
     - /.git/*
   - action: Send email
     type: EMAIL
     title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
-    content: Automation Report
+    content: Download your test report here $BUDDY_PIPELINE_URL/browse/content/playwright-report.zip
     send_as_html: true
     recipients: santhoshjeeva440@gmail.com
