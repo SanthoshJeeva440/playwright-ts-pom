@@ -15,6 +15,7 @@ pipeline {
                         npm ci
                         npm install --save-dev --no-audit
                         export PLAYWRIGHT_HTML_OUTPUT_DIR=my-report
+                        npx playwright install
                         npx playwright test --reporter=html
                         zip -r my.zip playwright-report/index.html
                     '''
