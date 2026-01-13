@@ -12,12 +12,14 @@ pipeline {
             steps {
                 withChecks(name: 'Install Dependencies', includeStage: true) {
                     sh '''
-                        npm ci
-                        npm install --save-dev --no-audit
-                        export PLAYWRIGHT_HTML_OUTPUT_DIR=my-report
-                        npx playwright install
-                        npx playwright test --reporter=html
-                        zip -r my.zip playwright-report/index.html
+                        docker run --rm \
+                        --platform=linux/amd64 \
+                        -v "$WORKSPACE:/work" \
+                        -w /work \
+                        mcr.microsoft.com/playwright:v1.51.1-jammy \
+                        bash -c "
+                        npm ci || npm install
+                        npx playwright test
                     '''
                 }
             }
