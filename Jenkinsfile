@@ -14,9 +14,8 @@ pipeline {
                     sh '''
                         npm ci
                         npm install --save-dev --no-audit
-                        npx playwright install firefox
                         export PLAYWRIGHT_HTML_OUTPUT_DIR=my-report
-                        npx playwright test --reporter=html --browser=firefox
+                        npx playwright test --reporter=html
                         zip -r my.zip playwright-report/index.html
                     '''
                 }
