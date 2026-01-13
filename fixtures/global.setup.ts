@@ -15,7 +15,7 @@ async function globalSetup() {
   await page.goto(BASEURL, { waitUntil: 'load' });
   const loginPage = new LoginPage(page);
   await loginPage.login(process.env.USERNAME, process.env.PASSWORD);
-  await page.waitForURL(/SearchHotel.php/)
+  await page.waitForURL(/.*SearchHotel.php/)
   await page.context().storageState({ path: 'storageState.json' });
   await browser.close();
 

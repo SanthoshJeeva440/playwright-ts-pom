@@ -17,7 +17,7 @@ export class LoginPage extends BasePage{
         this.searchHotelText = page.locator(loginLocators.searchHotelText);
     }
 
-    async login(username, password){
+    async login(username : any, password : any){
         await this.usernameInput.waitFor({timeout: 10000, state: 'visible'});
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
