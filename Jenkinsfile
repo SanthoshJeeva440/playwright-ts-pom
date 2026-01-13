@@ -12,14 +12,7 @@ pipeline {
             steps {
                 withChecks(name: 'Install Dependencies', includeStage: true) {
                     sh '''
-                        docker run --rm \
-                        --platform=linux/amd64 \
-                        -v "$WORKSPACE:/work" \
-                        -w /work \
-                        mcr.microsoft.com/playwright:v1.51.1-jammy \
-                        bash -c "
-                        npm ci || npm install
-                        npx playwright test
+                        docker run --rm --platform=linux/amd64 mcr.microsoft.com/playwright:v1.51.1-jammy bash -c "npm ci && npm install && npx playwright test"
                     '''
                 }
             }
