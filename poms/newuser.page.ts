@@ -4,7 +4,7 @@ import { loginLocators, newUserLocators } from './selectors/locators';
 import Tesseract from 'tesseract.js';
 import fs from 'fs';
 
-process.noDeprecation = true;
+process.throwDeprecation = true;
 
 
 export class NewUserPage extends BasePage{
@@ -13,8 +13,8 @@ export class NewUserPage extends BasePage{
     readonly usernameInput: Locator;
     readonly passwordInput: Locator;
     readonly confirmPasswordInput: Locator;
-    readonly fullnameInput: Locator;
-    readonly emailInput: Locator;
+    readonly fullnameInput: Locator | undefined;
+    readonly emailInput: Locator | undefined;
     readonly captchaImg: Locator;
     readonly captchaInput: Locator;
     readonly refreshButton: Locator;
