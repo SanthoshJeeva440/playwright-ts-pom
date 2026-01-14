@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+  agent {
+        docker {
+            image 'mcr.microsoft.com/playwright:v1.51.1-jammy'
+            args '--platform=linux/arm64'
+        }
+    }
 
     stages {
         stage('Clone Repo') {
