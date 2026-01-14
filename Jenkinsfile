@@ -3,6 +3,7 @@ pipeline {
         docker {
             image 'mcr.microsoft.com/playwright:v1.51.1-jammy'
             args '--platform=linux/arm64'
+            reuseNode true
         }
     }
 
