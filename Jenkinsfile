@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'linux-agent-1' }
 
     stages {
         stage('Clone Repo') {
@@ -12,7 +12,8 @@ pipeline {
             steps {
                 withChecks(name: 'Install Dependencies', includeStage: true) {
                     sh '''
-                        node -v
+                        npm ci
+                        npx playwright install --with-deps
                     '''
                 }
             }
@@ -22,7 +23,7 @@ pipeline {
             steps {
                 withChecks(name: 'Robot Tests', includeStage: true) {
                     sh '''
-                        npm -v
+                        npx playwright --version
                     '''
                 }
             }
