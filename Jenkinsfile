@@ -1,5 +1,12 @@
 pipeline {
     agent { label 'linux-agent-1' }
+    
+    parameters {
+        choice(name: 'ENV', choices: ['dev', 'qa', 'prod'], description: 'Environment')
+        choice(name: 'BROWSER', choices: ['chromium', 'firefox', 'webkit'], description: 'Browser')
+        string(name: 'TAGS', defaultValue: '@smoke', description: 'Test tags')
+        booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Run headless')
+    }
 
     stages {
         stage('Clone Repo') {
