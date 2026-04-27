@@ -12,8 +12,8 @@ pipeline {
             steps {
                 withChecks(name: 'Install Dependencies', includeStage: true) {
                     sh '''
-                        npm i --no-audit
-                        sudo npx playwright install --with-deps
+                        npm ci
+                        npx playwright install
                     '''
                 }
             }
