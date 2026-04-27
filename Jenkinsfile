@@ -13,7 +13,7 @@ pipeline {
                 withChecks(name: 'Install Dependencies', includeStage: true) {
                     sh '''
                         npm i --no-audit
-                        npx playwright install --with-deps
+                        sudo npx playwright install --with-deps
                     '''
                 }
             }
