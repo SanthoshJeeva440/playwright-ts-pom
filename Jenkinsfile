@@ -1,4 +1,7 @@
 pipeline {
+
+    agent none
+
     parameters {
         choice(
             name: 'AGENT',
@@ -12,11 +15,13 @@ pipeline {
         booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Run headless')
     }
 
-    agent {
-        label "${params.AGENT}"
-    }
+    stages {
 
         stage('Install Dependencies') {
+            agent {
+                label "${params.AGENT}"
+            }
+
             steps {
                 withChecks(name: 'Install Dependencies', includeStage: true) {
                     sh '''
@@ -28,6 +33,10 @@ pipeline {
         }
 
         stage('Run Test') {
+            agent {
+                label "${params.AGENT}"
+            }
+
             steps {
                 withChecks(name: 'Robot Tests', includeStage: true) {
                     sh '''
