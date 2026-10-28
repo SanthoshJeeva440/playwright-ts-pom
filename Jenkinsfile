@@ -5,7 +5,7 @@ pipeline {
     parameters {
         choice(
             name: 'AGENT',
-            choices: ['linux-agent-1', 'mac-agent-1', 'Built-In Node'],
+            choices: ['linux-agent-1', 'mac-agent-1', 'Built-In Node', 'agent-git'],
             description: 'Select Jenkins Agent'
         )
 
